@@ -1,0 +1,12 @@
+{
+	"manifest_version":			2,
+	
+	"name": 					"Custom Dashboard",
+	"description": 				"Custom dashboard for the new tab page of chrome",
+	"version": 					"0.0.1",
+	
+	"permissions": 				["management"],
+	"chrome_url_overrides":		{
+		"newtab": "custom_dashboard.html"
+	}
+}
