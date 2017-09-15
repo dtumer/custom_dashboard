@@ -9,6 +9,9 @@ app.directive('myNews', function() {
 		templateUrl: '../widgets/news/news.html'
 	};
 })
+//controller for managing the news section
+//TODO:
+////	Add way for user to specify which news organization to grab articles from
 .controller('NewsController', ['NewsService', '$scope', function(NewsService, $scope) {
 	$scope.init = function() {
 		$scope.getArticles();
