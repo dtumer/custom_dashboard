@@ -1,0 +1,31 @@
+<!doctype HTML>
+
+<html ng-app="custom_dashboard">
+	<head>
+		<link rel="stylesheet" type="text/css" href="style/lib/bootstrap/bootstrap.css"/>
+
+		<script type="text/javascript" src="js/lib/angular-1.6.6.min.js"></script>
+		<script type="text/javascript" src="js/custom_dashboard.js"></script>
+	</head>
+
+	<body ng-controller="DashboardController">
+		<div class="row">
+			<div class="col-md-4">
+				<my-news></my-news>
+			</div>
+			<div class="col-md-4">
+				<h1>Time</h1>
+				<div id="clock">
+					<span class="time"></span>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<h1>HEY THERE 3</h1>
+			</div>
+		</div>
+	</body>
+
+	<script type="text/javascript" src="js/lib/jquery-3.2.1.min.js"></script>
+
+	<script type="text/javascript" src="../widgets/news/news.js"></script>
+</html>

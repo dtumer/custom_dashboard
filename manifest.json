@@ -7,6 +7,6 @@
 	
 	"permissions": 				["management"],
 	"chrome_url_overrides":		{
-		"newtab": "custom_dashboard.html"
+		"newtab": "dashboard/custom_dashboard.html"
 	}
 }

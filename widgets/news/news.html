@@ -1,0 +1,11 @@
+<div ng-controller="NewsController">
+	<h1>HEY THERE 1</h1>
+	<ul class="list-group">
+		<div ng-repeat="article in articles" class="list-group-item">
+			<h6>{{article.title}}</h6>
+			<p>{{article.author}}</p>
+			<p>{{article.description}}</p>
+			<a href="{{article.url}}">see more</a>
+		</div>
+	</ul>
+</div>
