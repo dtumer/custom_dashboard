@@ -12,7 +12,7 @@ app.directive('myNews', function() {
 //controller for managing the news section
 //TODO:
 ////	Add way for user to specify which news organization to grab articles from
-.controller('NewsController', ['NewsService', '$scope', function(NewsService, $scope) {
+.controller('NewsController', ['NewsService', '$scope', 'LocalStorageService', '$window', function(NewsService, $scope, LocalStorageService, $window) {
 	$scope.init = function() {
 		$scope.getArticles();
 	};
@@ -25,10 +25,18 @@ app.directive('myNews', function() {
 		}, function(error) {
 			//error
 		});
-	}
+	};
+
+	// removes widget from the local storage
+	$scope.removeWidget = function() {
+		LocalStorageService.removeWidget($scope.ndx);
+
+		$window.location.reload();
+	};
 
 	$scope.init();
 }])
+//service for retreiving sources
 .service('NewsService', function($http, $q) {
 	var service = this;
 
@@ -43,10 +51,31 @@ app.directive('myNews', function() {
 			defer.resolve(response);
 		}, function(error) {
 			defer.reject(error);
-		})
+		});
 
 		return defer.promise;
 	}
 
 	return service;
-});
+})
+//factory containing all the news sources that can be found
+.factory('NewsSourcesFactory', [function() {
+	var factory = {};
+
+	factory.getNewsSources = function() {
+		return [
+			"techcrunch",
+			"cnn"
+		];
+	}
+
+	return factory;
+}])
+// service for checking what source the user has currently selected
+.service('NewsPreferencesService', [function() {
+	var service = this;
+
+	//TODO: add function for retrieving preferences for this news widget
+
+	return service;
+}]);

@@ -1,0 +1,12 @@
+<div ng-controller="NoneController">
+	<h1>Select Widget</h1>
+
+	<div class="dropdown">
+  		<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Dropdown button
+  		</button>
+  		<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+  			<a ng-repeat="widget in activeWidgets" class="dropdown-item" href="#" ng-click="selectWidget(widget.widgetId);">{{widget.name}}</a>
+  		</div>
+	</div>
+</div>

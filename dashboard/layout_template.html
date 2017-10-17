@@ -1,0 +1,38 @@
+<div ng-switch on="type">
+	<!-- layout for 1 column type -->
+	<div ng-switch-when="col1">
+		<div class="row">
+			<div class="col-md-12">
+				<widget type="loadedWidgets[0]" ndx="0"/>
+			</div>
+		</div>
+	</div>
+	<div ng-switch-when="col2">
+		<div class="row">
+			<div class="col-md-6">
+				<widget type="loadedWidgets[0]" ndx="0"/>
+			</div>
+			<div class="col-md-6">
+				<widget type="loadedWidgets[1]" ndx="1"/>
+			</div>
+		</div>
+	</div>
+	<!-- layout for column 3 type -->
+	<div ng-switch-when="col3">
+		<div class="row">
+			<div class="col-md-4">
+				<widget type="loadedWidgets[0]" ndx="0"/>
+			</div>
+			<div class="col-md-4">
+				<h1>Time</h1>
+				<div id="clock">
+					<span class="time"></span>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<widget type="loadedWidgets[2]" ndx="2"/>
+			</div>
+		</div>		
+	</div>
+</div>
+
